@@ -100,7 +100,6 @@ $(function() {
     }
 
     function setQuestionString() {
-        console.log(questions);
         j = 1;
         while(localStorage.getItem(String(j)) !== null) {
             getArray = localStorage.getItem(String(j));
@@ -121,9 +120,17 @@ $(function() {
 
     $('#list-word').on('click', '.button-delete',function(){
         let wordNumber = 0;
+        let value;
         wordNumber = $(this).attr('id');
-        console.log(wordNumber);
         localStorage.removeItem(wordNumber);
+        wordNumber++;
+        while(localStorage.getItem(String(wordNumber)) !== null) {
+            value = localStorage.getItem(String(wordNumber));
+            localStorage.setItem(String(wordNumber - 1),value);
+            localStorage.removeItem(wordNumber);
+            wordNumber++;
+        }
         $(this).parent().css('display','none');
+        showAddedWords();
     });
 });
