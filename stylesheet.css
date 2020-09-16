@@ -80,7 +80,13 @@ header {
 
 #list-word {
     display: none;
-    padding-top: 25px;
+    padding-top: 40px;
+    text-align: right;
+}
+
+#list-word li {
+    padding-right: 80px;
+    vertical-align: top;
 }
 
 #comment-qnone {
