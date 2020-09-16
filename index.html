@@ -2,6 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
+        <meta name="author" content="しらたま">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>英単語メモライザー</title>
         <link rel="stylesheet" href="stylesheet.css">
@@ -10,20 +11,20 @@
     </head>
     <body>
         <header>
-            <a href="">細かい説明はこちらをご確認ください。</a>
+            <a href="https://github.com/Shiratama1529/EwordsMemo">細かい説明はこちらをご確認ください。</a>
             <h2>英単語メモライザー</h2>
             <p id="copyright">© 2020 しらたま<a href="https://twitter.com/Shiratama15291" class="fab fa-twitter-square"></a></p>
         </header>
         <div id="game-container">
             <div id="select-panel">
                 <button id="button-start">Start!</button>
-                <button id="button-goset">Go Set...</button>
+                <button id="button-goset">Go Set</button>
             </div>
             <div id="game-panel">
                 <p id="example-sentence"></p>
                 <p id="example-sentence-japanese"></p>
                 <input id="answer">
-                <button id="button-check">添削</button>
+                <button id="button-check">解答</button>
                 <p id="result"></p>
                 <p id="correct-answer"></p>
                 <p id="comment-end"></p>
@@ -35,13 +36,13 @@
                 <input class="setting-padding" id="example-last" placeholder="単語後の例文">
                 <input class="setting-padding" id="example-japanese" placeholder="例文の日本語訳">
                 <br>
-                <button class="setting-padding" id="button-execute">問題作成</button>
+                <button class="setting-padding" id="button-execute">Add</Address></button>
                 <br>
             </div>
             <button id="button-back">戻る</button>
             <button id="button-next">次へ</button>
-            <ul id="list-word">登録されている単語</ul>
-            <p id="comment-qnone">問題がまだ登録されておりません。<br>Go Set...より問題を登録してください。</p>
+            <ul id="list-word">追加</ul>
+            <p id="comment-qnone">問題がまだ登録されておりません。<br>「Go Set」より問題を追加してください。</p>
         </div>
         <script src="script.js"></script>
     </body>
