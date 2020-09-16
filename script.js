@@ -72,8 +72,6 @@ $(function() {
             $('#correct-answer').text('A. ' + questions[qNumber].word);
         }
         $('#button-next').css('display','block');
-        console.log(questions.length);
-        console.log(qNumber);
         if(qNumber === questions.length - 1) {
             $('#button-next').css('display','none');
             $('#comment-end').text("That's all. Good job! (" + point + "/" + questions.length + ")");
@@ -129,6 +127,9 @@ $(function() {
             localStorage.setItem(String(wordNumber - 1),value);
             localStorage.removeItem(wordNumber);
             wordNumber++;
+        }
+        if(localValue > 1) {
+            localValue--;
         }
         $(this).parent().css('display','none');
         showAddedWords();
