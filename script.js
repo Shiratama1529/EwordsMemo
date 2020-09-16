@@ -115,7 +115,7 @@ $(function() {
         setQuestionString();
         $('#list-word').html('');
         for(let n = 0; n < questions.length; n++) {
-            $('#list-word').append('<li>' + questions[n].word + ' <button class="button-delete" id="' + (n + 1) + '">☓</button></li><br>');
+            $('#list-word').append('<li>' + questions[n].word + ' 　<button class="button-delete" id="' + (n + 1) + '">☓</button></li><br>');
         }
     }
 
