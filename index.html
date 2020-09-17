@@ -21,6 +21,7 @@
             <div id="select-panel">
                 <button id="button-start">Start!</button>
                 <button id="button-goset">Setting</button>
+                <button id="button-go-backup">Backup</button>
             </div>
             <div id="game-panel">
                 <p id="example-sentence"></p>
@@ -31,7 +32,16 @@
                 <p id="correct-answer"></p>
                 <p id="comment-end"></p>
             </div>
-            
+            <div id="backup-panel">
+                <div id="heading-create-backup">バックアップ保存</div>
+                <button id="button-create-backup">ダウンロード</button>
+                <div id="comment-report">単語が存在しません</div>
+                <div id="heading-load-backup">バックアップ読み込み</div>
+                <div id="comment-careful">※現在登録されている単語は削除されます！</div>
+                <input id="button-load-backup" type="file">
+                <div id="comment-load-completed">読み込み完了！</div>
+                <pre id="pre1"></pre>
+            </div>
             <div id="setting-panel">
                 <input class="setting-padding" id="word" placeholder="単語">
                 <input class="setting-padding" id="example-first" placeholder="単語前の例文">
