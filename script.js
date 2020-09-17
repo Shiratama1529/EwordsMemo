@@ -78,6 +78,7 @@ $(function() {
             link.href = URL.createObjectURL(blob);
             link.download = 'EwordsMemo_' + year + '_' + month + '_' + date + '.eback';
             link.click();
+            $('#comment-report').css('visibility','hidden');
         } else {
             $('#comment-report').css('visibility','visible');
         }
