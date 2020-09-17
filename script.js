@@ -92,7 +92,7 @@ $(function() {
             reader.onload = function() {
                 let decodeData = reader.result.split('|||');
                 for(let i = 0; i < decodeData.length; i++) {
-                    localStorage.setItem(String(i + 1),decodeData[i]);
+                    localStorage.setItem(String(i + 1),escapeHTML(decodeData[i]));
                 }
                 $('#comment-load-completed').css('display','block');
             };
