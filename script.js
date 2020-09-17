@@ -17,6 +17,7 @@ $(function() {
         $('#setting-panel').css('display','block');
         $('#list-word').css('display','block');
         $('#button-back').css('display','block');
+        $('#button-go-backup').css('display','block');
     });
 
     $('#button-execute').click(function() {
@@ -38,6 +39,51 @@ $(function() {
             }
         }
         showAddedWords();
+    });
+
+    $('#button-go-backup').click(function() {
+        $('#select-panel').css('display','none');
+        $('#backup-panel').css('display','block');
+        $('#button-go-backup').css('display','none');
+        $('#button-back').css('display','block');
+    });
+
+    $('#button-create-backup').click(function() {
+        const BackupData = [];
+        for(let a = 1; a <= questions.length; a++) {
+            let getBackup = localStorage.getItem(String(a));
+            BackupData.push(getBackup);
+        }
+        if(BackupData.length > 0) {
+            let blob = new Blob([BackupData.join('|||')],{type:"text/plan"});
+            let link = document.createElement('a');
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = now.getMonth() + 1;
+            var date = now.getDate(); 
+            link.href = URL.createObjectURL(blob);
+            link.download = 'EwordsMemo_' + year + '_' + month + '_' + date + '.eback';
+            link.click();
+        } else {
+            $('#comment-report').css('visibility','visible');
+        }
+    });
+
+    addEventListener('load', function() {
+        const f = document.getElementById('button-load-backup');
+        f.addEventListener('change', function(evt) {
+            let input = evt.target;
+            const file = input.files[0];
+            const reader = new FileReader();
+            reader.onload = function() {
+                let decodeData = reader.result.split('|||');
+                for(let i = 0; i < decodeData.length; i++) {
+                    localStorage.setItem(String(i + 1),decodeData[i]);
+                }
+                $('#comment-load-completed').css('display','block');
+            };
+            reader.readAsText(file);
+        });
     });
 
     $('#button-start').click(function() {
@@ -98,6 +144,7 @@ $(function() {
     }
 
     function setQuestionString() {
+        questions.length = 0;
         j = 1;
         while(localStorage.getItem(String(j)) !== null) {
             getArray = localStorage.getItem(String(j));
@@ -108,7 +155,6 @@ $(function() {
     }
 
     function showAddedWords() {
-        questions.length = 0;
         setQuestionString();
         $('#list-word').html('');
         for(let n = 0; n < questions.length; n++) {
