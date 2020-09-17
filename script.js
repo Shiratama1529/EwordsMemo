@@ -103,6 +103,7 @@ $(function() {
                 $('#comment-load-completed').css('display','block');
             };
             reader.readAsText(file);
+            showAddedWords();
         });
     });
 
