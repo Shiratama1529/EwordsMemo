@@ -91,6 +91,11 @@ $(function() {
             const reader = new FileReader();
             reader.onload = function() {
                 let decodeData = reader.result.split('|||');
+                let o = 1;
+                while(localStorage.getItem(String(o)) !== null) {
+                    localStorage.removeItem(String(o));
+                    o++;
+                }
                 for(let i = 0; i < decodeData.length; i++) {
                     localStorage.setItem(String(i + 1),escapeHTML(decodeData[i]));
                 }
