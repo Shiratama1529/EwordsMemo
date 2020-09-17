@@ -40,6 +40,20 @@ $(function() {
         }
         showAddedWords();
     });
+    
+    $('input').change(function() {
+        let decoded = escapeHTML($(this).val());
+        $(this).val(decoded);
+    });
+
+    function escapeHTML(str) {
+        str = str.replace(/&/g, '&amp;');
+        str = str.replace(/</g, '&lt;');
+        str = str.replace(/>/g, '&gt;');
+        str = str.replace(/"/g, '&quot;');
+        str = str.replace(/'/g, '&#39;');
+        return str;
+       }
 
     $('#button-go-backup').click(function() {
         $('#select-panel').css('display','none');
