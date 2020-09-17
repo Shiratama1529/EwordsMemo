@@ -17,10 +17,48 @@ header {
     border: 1px solid black;
 }
 
+#backup-panel {
+    display: none;
+    height: 240px;
+    border: 1px solid black;
+}
+
 #setting-panel {
     display: none;
     height: 240px;
     border: 1px solid black;
+}
+
+#heading-create-backup {
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+#button-create-backup {
+    margin-bottom: 3px;
+}
+
+#comment-report {
+    font-size: 12px;
+    color: red;
+    padding-bottom: 20px;
+    visibility: hidden;
+}
+
+#heading-load-backup {
+    padding-bottom: 3px;
+}
+
+#comment-careful {
+    font-size: 12px;
+    color: red;
+    padding-bottom: 10px;
+}
+
+#comment-load-completed {
+    padding-top: 15px;
+    font-size: 16px;
+    display: none;
 }
 
 .setting-padding {
@@ -41,7 +79,17 @@ header {
 }
 
 #button-start {
-    margin: 100px 100px 0 0;
+    margin: 100px 40px 0 0;
+    width: 60px;
+}
+
+#button-goset {
+    margin: 100px 40px 0 0;
+    width: 60px;
+}
+
+#button-go-backup {
+    width: 60px;
 }
 
 #game-panel {
