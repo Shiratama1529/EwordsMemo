@@ -19,6 +19,7 @@ $(function() {
         $('#button-back').css('display','block');
         $('#button-go-backup').css('display','block');
         $('#comment-sorry').css('display','none');
+        $('#comment-list-word').css('display','block');
     });
 
     $('#button-execute').click(function() {
@@ -115,6 +116,8 @@ $(function() {
             $('#select-panel').css('display','none');
             $('#game-panel').css('display','block');
             $('#button-back').css('display','block');
+            $('#comment-list-forget-word').css('display','block');
+            $('#list-forget-word').css('display','block');
             $('#result').text("");
             $('#correct-answer').text('');
             $('#answer').val("");
@@ -140,6 +143,7 @@ $(function() {
         } else {
             $('#result').text("Oops! Let's check the answer.");
             $('#correct-answer').text('A. ' + questions[qNumber].word);
+            $('#list-forget-word').append('<li class="forget-english">' + questions[qNumber].frontExample + questions[qNumber].word + questions[qNumber].backExample + '</li><li class="forget-japanese">' + questions[qNumber].exampleJapanese + '</li>');
         }
         $('#button-next').css('display','block');
         if(qNumber === questions.length - 1) {
