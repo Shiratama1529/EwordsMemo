@@ -31,7 +31,7 @@ $(function() {
                 localValue++;
             } else {
                 flag = true;
-                localStorage.setItem(String(localValue),word+","+exampleFirst+","+exampleLast+","+exampleJapanese);
+                localStorage.setItem(String(localValue),word+"^^^"+exampleFirst+"^^^"+exampleLast+"^^^"+exampleJapanese);
                 $('#word').val('');
                 $('#example-first').val('');
                 $('#example-last').val('');
@@ -169,7 +169,7 @@ $(function() {
         j = 1;
         while(localStorage.getItem(String(j)) !== null) {
             getArray = localStorage.getItem(String(j));
-            decodeArray = getArray.split(',');
+            decodeArray = getArray.split('^^^');
             questions.push({word: decodeArray[0], frontExample: decodeArray[1], backExample: decodeArray[2],exampleJapanese: decodeArray[3]});
             j++;
         }
