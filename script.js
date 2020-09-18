@@ -20,6 +20,7 @@ $(function() {
         $('#button-go-backup').css('display','block');
         $('#comment-sorry').css('display','none');
         $('#comment-list-word').css('display','block');
+        $('#button-all-delete').css('display','block');
     });
 
     $('#button-execute').click(function() {
@@ -189,6 +190,15 @@ $(function() {
             $('#list-word').append('<li>' + questions[n].word + ' 　<button class="button-delete" id="' + (n + 1) + '">☓</button></li><br>');
         }
     }
+
+    $('#button-all-delete').click(function() {
+        let o = 1;
+        while(localStorage.getItem(String(o)) !== null) {
+            localStorage.removeItem(String(o));
+            o++;
+        }
+        showAddedWords();
+    });
 
     $('#list-word').on('click', '.button-delete',function(){
         let wordNumber = 0;
