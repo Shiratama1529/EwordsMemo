@@ -18,6 +18,7 @@ $(function() {
         $('#list-word').css('display','block');
         $('#button-back').css('display','block');
         $('#button-go-backup').css('display','block');
+        $('#comment-sorry').css('display','none');
     });
 
     $('#button-execute').click(function() {
@@ -56,6 +57,7 @@ $(function() {
        }
 
     $('#button-go-backup').click(function() {
+        $('#comment-sorry').css('display','none');
         $('#select-panel').css('display','none');
         $('#backup-panel').css('display','block');
         $('#button-go-backup').css('display','none');
@@ -109,6 +111,7 @@ $(function() {
 
     $('#button-start').click(function() {
         if(questions.length !== 0) {
+            $('#comment-sorry').css('display','none');
             $('#select-panel').css('display','none');
             $('#game-panel').css('display','block');
             $('#button-back').css('display','block');
