@@ -192,3 +192,8 @@ header {
     color: blue;
     font-size: 12px;
 }
+
+#button-all-delete {
+    display: none;
+    margin: 0 auto;
+}
