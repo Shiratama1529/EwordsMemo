@@ -44,13 +44,6 @@ $(function() {
         }
         showAddedWords();
     });
-    
-    /*
-    $('input').change(function() {
-        let decoded = escapeHTML($(this).val());
-        $(this).val(decoded);
-    });
-    */
 
     function escapeHTML(str) {
         str = str.replace(/&/g, '&amp;');
@@ -159,7 +152,7 @@ $(function() {
     });
 
     $('#button-check').click(function() {
-        let $answer = $('#answer').val();
+        let $answer = escapeHTML($('#answer').val());
         document.getElementById('button-check').disabled = true;
         if($answer === questions[qNumber].word){
             $('#result').text('OK!');
