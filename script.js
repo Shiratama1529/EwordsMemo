@@ -6,6 +6,7 @@ $(function() {
     let point = 0, localValue = 1;
     let flag = false;
     let word, exampleFirst, exampleLast, exampleJapanese, getArray, decodeArray;
+    let hiddenSwitch = false;
 
     let j = 1;
     let StorageLength = 0;
@@ -135,6 +136,18 @@ $(function() {
         }
     });
 
+    $('#button-hidden-forget-word').click(function() {
+        if(hiddenSwitch) {
+            hiddenSwitch = false;
+            $(this).text('答えを非表示');
+            $('.forget-english').css('visibility','visible');
+        } else {
+            hiddenSwitch = true;
+            $(this).text('答えを表示');
+            $('.forget-english').css('visibility','hidden');
+        }
+    });
+
     $('#button-check').click(function() {
         let $answer = $('#answer').val();
         document.getElementById('button-check').disabled = true;
@@ -150,6 +163,7 @@ $(function() {
         if(qNumber === questions.length - 1) {
             $('#button-next').css('display','none');
             $('#comment-end').text("That's all. Good job! (" + point + "/" + questions.length + ")");
+            $('#button-hidden-forget-word').css('display','block');
         }
     });
 
