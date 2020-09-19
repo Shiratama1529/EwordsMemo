@@ -26,10 +26,10 @@ $(function() {
 
     $('#button-execute').click(function() {
         flag = false;
-        word = $('#word').val();
-        exampleFirst = $('#example-first').val();
-        exampleLast = $('#example-last').val();
-        exampleJapanese = $('#example-japanese').val();
+        word = escapeHTML($('#word').val());
+        exampleFirst = escapeHTML($('#example-first').val());
+        exampleLast = escapeHTML($('#example-last').val());
+        exampleJapanese = escapeHTML($('#example-japanese').val());
         while(flag === false) {
             if(localStorage.getItem(String(localValue)) !== null) {
                 localValue++;
@@ -45,10 +45,12 @@ $(function() {
         showAddedWords();
     });
     
+    /*
     $('input').change(function() {
         let decoded = escapeHTML($(this).val());
         $(this).val(decoded);
     });
+    */
 
     function escapeHTML(str) {
         str = str.replace(/&/g, '&amp;');
@@ -57,7 +59,15 @@ $(function() {
         str = str.replace(/"/g, '&quot;');
         str = str.replace(/'/g, '&#39;');
         return str;
-       }
+    }
+
+    function escapeHTML_2(str) {
+        str = str.replace(/</g, '&lt;');
+        str = str.replace(/>/g, '&gt;');
+        str = str.replace(/"/g, '&quot;');
+        str = str.replace(/'/g, '&#39;');
+        return str;
+    }
 
     $('#button-go-backup').click(function() {
         $('#comment-sorry').css('display','none');
@@ -103,7 +113,7 @@ $(function() {
                     o++;
                 }
                 for(let i = 0; i < decodeData.length; i++) {
-                    localStorage.setItem(String(i + 1),escapeHTML(decodeData[i]));
+                    localStorage.setItem(String(i + 1),escapeHTML_2(decodeData[i]));
                 }
                 $('#comment-load-completed').css('display','block');
             };
@@ -156,7 +166,7 @@ $(function() {
             point++;
         } else {
             $('#result').text("Oops! Let's check the answer.");
-            $('#correct-answer').text('A. ' + questions[qNumber].word);
+            $('#correct-answer').html('A. ' + questions[qNumber].word);
             $('#list-forget-word').append('<li class="forget-english">' + questions[qNumber].frontExample + questions[qNumber].word + questions[qNumber].backExample + '</li><li class="forget-japanese">' + questions[qNumber].exampleJapanese + '</li>');
         }
         $('#button-next').css('display','block');
@@ -183,7 +193,7 @@ $(function() {
     function setQuestion() {
         qNumber++;
         $('#example-sentence').html(questions[qNumber].frontExample + ' <span id="question-border"><span class="question">space</span></span> ' + questions[qNumber].backExample);
-        $('#example-sentence-japanese').text(questions[qNumber].exampleJapanese);
+        $('#example-sentence-japanese').html(questions[qNumber].exampleJapanese);
     }
 
     function setQuestionString() {
