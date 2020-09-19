@@ -197,3 +197,8 @@ header {
     display: none;
     margin: 0 auto;
 }
+
+#button-hidden-forget-word {
+    margin: 0 auto;
+    display: none;
+}
