@@ -66,7 +66,7 @@ header {
 }
 
 #word {
-    margin-top: 40px;
+    margin-top: 75px;
 }
 
 #button-execute {
@@ -78,18 +78,17 @@ header {
     height: 96px;
 }
 
+#heading-select-panel {
+    padding: 10px;
+}
+
 #button-start {
-    margin: 100px 40px 0 0;
-    width: 60px;
+    margin-right: 5px;
 }
 
 #button-goset {
-    margin: 100px 40px 0 0;
-    width: 60px;
-}
-
-#button-go-backup {
-    width: 60px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 #game-panel {
@@ -98,12 +97,32 @@ header {
     display: none;
 }
 
+#game-panel2 {
+    height: 240px;
+    border: 1px solid black;
+    display: none;
+}
+
+.btn-answer {
+    width: 80%;
+    margin-bottom: 5px;
+}
+
 #example-sentence {
     font-size: 15px;
 }
 
 #example-sentence-japanese {
     font-size: 12px;
+}
+
+#example-sentence2 {
+    padding: 5px 0;
+}
+
+#correct-answer2 {
+    color: red;
+    font-size: 15px;
 }
 
 .question {
@@ -157,7 +176,7 @@ header {
 }
 
 #list-word li {
-    padding-right: 30px;
+    padding-right: 60px;
     vertical-align: top;
 }
 
@@ -203,6 +222,6 @@ header {
     display: none;
 }
 
-.btn {
+.container-input {
     width: 60%;
 }
