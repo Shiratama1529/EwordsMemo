@@ -20,8 +20,13 @@
         </header>
         <div id="game-container">
             <div id="select-panel">
-                <button id="button-start">Start!</button>
+                <div id="part-of-check">
+                    <div id="heading-select-panel">Start Checking...</div>
+                    <button id="button-start">Spelling</button>
+                    <button id="button-start2">Meaning</button>
+                </div>
                 <button id="button-goset">Setting</button>
+                <br>
                 <button id="button-go-backup">Backup</button>
             </div>
             <div id="game-panel">
@@ -32,6 +37,16 @@
                 <p id="result"></p>
                 <p id="correct-answer"></p>
                 <p id="comment-end"></p>
+            </div>
+            <div id="game-panel2">
+                <div id="example-sentence2"></div>
+                <button class="btn-answer" id="btn-answer1"></button>
+                <button class="btn-answer" id="btn-answer2"></button>
+                <button class="btn-answer" id="btn-answer3"></button>
+                <button class="btn-answer" id="btn-answer4"></button>
+                <div id="result2"></div>
+                <div id="correct-answer2"></div>
+                <div id="comment-end2"></div>
             </div>
             <div id="backup-panel">
                 <div id="heading-create-backup">バックアップ保存</div>
@@ -44,10 +59,8 @@
                 <pre id="pre1"></pre>
             </div>
             <div id="setting-panel">
-                <input class="setting-padding btn" id="word" placeholder="単語">
-                <input class="setting-padding btn" id="example-first" placeholder="単語前の例文">
-                <input class="setting-padding btn" id="example-last" placeholder="単語後の例文">
-                <input class="setting-padding btn" id="example-japanese" placeholder="単語, 例文の日本語訳">
+                <input class="setting-padding container-input" id="word" placeholder="単語">
+                <input class="setting-padding container-input" id="example-japanese" placeholder="単語の日本語訳">
                 <br>
                 <button class="setting-padding" id="button-execute">追加</Address></button>
                 <br>
@@ -60,7 +73,7 @@
             <div id="comment-list-forget-word">間違えた問題</div>
             <button id="button-hidden-forget-word">答えを非表示</button>
             <ul id="list-forget-word"></ul>
-            <p id="comment-qnone">問題がまだ登録されておりません。<br>「Setting」より問題を追加してください。</p>
+            <p id="comment-qnone"></p>
         </div>
         <script src="script.js"></script>
     </body>
